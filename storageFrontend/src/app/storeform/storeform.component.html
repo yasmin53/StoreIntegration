@@ -1,0 +1,53 @@
+<div>
+    <div class="row">
+        <div class="col-lg-3 col-md-2 col-sm-1"></div>
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <p class="h2 text-light text-uppercase text-center mb-2 ">StoreForm </p>  
+            <form class="form-group border p-3 p-lg-5 border-curved mt-5  " [formGroup]="storeForm" style="background-color: rgba(150, 168, 151, 0.897);" >
+                <div class="jumbotron p-2 p-lg-3"style="background-color: rgb(124, 130, 139);">
+               <div class="form-group">
+                        <label for=" storeManagerName"><i class="fas fa-user"></i>ManagerName</label>
+                        <input type="text" class="form-control " name=" storeManagerName" formControlName=" storeManagerName"  placeholder="Enter your user name">
+                       
+                    </div>
+                    <div class="form-group">
+                        <label for="id"><i class="fas fa-info"></i>Id</label>
+                        <input type="number" class="form-control " name="id" formControlName="id"
+                        placeholder="Enter Id with max 5 digits" >
+                    </div>
+                    
+                 <div class="form-group">
+                        <label for="city"><i class="fas fa-eye"></i>City</label>
+                        <input type="text" class="form-control" id="city" formControlName=city
+                placeholder=" enter city" >
+                 </div>
+                
+                    <div class="form-group">
+                        <label for="fromTime"><i class="fas fa-portrait"></i>FromTime</label>
+                        <input type="datetime-local" class="form-control " name="fromTime" formControlName="fromTime"
+                        placeholder="Enter  timings"> </div>
+                        <div class="form-group">
+                            <label for="toTime"><i class="fas fa-portrait"></i>ToTime</label>
+                            <input type="datetime-local" class="form-control " name="toTime" formControlName="toTime"
+                            placeholder="Enter  timings"> </div>
+                 <div class="form-group">
+                    <label for="phone"><i class="fas fa-portrait"></i>PhoneNumber</label>
+                    <input type="number" class="form-control " name="phone" formControlName="phone"
+                    placeholder="Enter your number">
+                   
+                </div>
+                <div class="form-group">
+                    <label for="holidaysPerMonth"><i class="fas fa-portrait"></i>Holidays</label>
+                    <input type="number" class="form-control " name="holidaysPerMonth" formControlName="holidaysPerMonth"
+                    placeholder="Enter leaves"> </div>
+               <div class="form-group">
+                    <button class="btn btn-success "  onsubmit="onSubmit()" [disabled]="!storeForm.valid" class="btn  btn-success px-5 mx-3">AddDetails</button> 
+                             do u want to reset?
+                             <button type="reset"  class="btn  btn-success px-5 mx-3">reset</button>       
+                    </div>
+                </div>
+                     </form>
+                    </div>
+        </div>
+
+</div>

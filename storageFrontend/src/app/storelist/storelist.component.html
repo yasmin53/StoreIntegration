@@ -1,0 +1,42 @@
+<div class="row py-5 py-md-4 py-3">
+    <div class="col mx-auto table-responsive">
+        <table class="table border-curved  table-light p-1 p-md-3 p-lg-5">
+            <caption style="caption-side: top;">
+              <h1 class=" h2 text-center text-uppercase text-light" >All Store Details</h1></caption>
+              <thead>
+                <th>StoreId</th>
+                <th>StoreName</th>
+                <th>AddressLine1</th>
+                <th>AddresssLine2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Country</th>
+                <th>Pincode</th>
+                <th>HoliDayOn</th>
+                <th>OpenCloseTimings</th>
+                <th>ContactNumber</th>
+                <th>Actions</th>
+              </thead>
+              <tbody *ngFor="let store of stores">
+              <td>{{store.StoreId}}</td>
+              <td>{{store.StoreName}}</td>
+              <td>{{store.AddressLine1}}</td>
+              <td>{{store.AddresssLine2}}</td>
+              <td>{{store.City}}</td>
+              <td>{{store.State}}</td>
+              <td>{{store.Country}}</td>
+              <td>{{store.Pincode}}</td>
+              <td>{{store.HoliDayOn}}</td>
+              <td>{{store.OpenCloseTimings}}</td>
+              <td>{{store.contact}}</td>
+      <td>
+        <button class="btn btn-warning mx-auto m-2" (click)="updateStore(store)"><i class="fas fa-edit"></i>Update</button>
+        <!-- <button class="btn btn-danger mx-auto m-2" (click)="deleteIpo(ipo)"><i class="fas fa-trash"></i>Delete</button> -->
+      </td>
+      
+    </tbody>
+  </table>
+  
+  <a onclick="location.href='storeform'"><button class="btn btn-block btn-outline-secondary bg-light">Add New</button></a>
+      </div>
+  </div>

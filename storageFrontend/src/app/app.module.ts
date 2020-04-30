@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import{HttpClientModule, HTTP_INTERCEPTORS}from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StoreformComponent } from './storeform/storeform.component';
+import { StorelistComponent } from './storelist/storelist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    StoreformComponent
+    StoreformComponent,
+    StorelistComponent
   ],
   imports: [
     BrowserModule,

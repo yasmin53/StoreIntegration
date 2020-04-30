@@ -3,51 +3,70 @@
         <div class="col-lg-3 col-md-2 col-sm-1"></div>
         <div class="col-lg-6 col-md-8 col-sm-10">
             <p class="h2 text-light text-uppercase text-center mb-2 ">StoreForm </p>  
-            <form class="form-group border p-3 p-lg-5 border-curved mt-5  " [formGroup]="storeForm" style="background-color: rgba(150, 168, 151, 0.897);" >
+            <form class="form-group border p-3 p-lg-5 border-curved mt-5  " [formGroup]="storeForm" (ngSubmit)="addStore()"style="background-color: rgba(150, 168, 151, 0.897);" >
                 <div class="jumbotron p-2 p-lg-3"style="background-color: rgb(124, 130, 139);">
                <div class="form-group">
-                        <label for=" storeManagerName"><i class="fas fa-user"></i>ManagerName</label>
-                        <input type="text" class="form-control " name=" storeManagerName" formControlName=" storeManagerName"  placeholder="Enter your user name">
-                       
+                        <label for=" storeName">StoreName</label>
+                        <input type="text" class="form-control " name=" storeName" formControlName=" storeName"  placeholder="Enter your store name">
+                        <span class="text-light" *ngIf="nameTaken"><small>This username is already exists.</small></span>
                     </div>
                     <div class="form-group">
-                        <label for="id"><i class="fas fa-info"></i>Id</label>
-                        <input type="number" class="form-control " name="id" formControlName="id"
+                        <label for="storeId">StoreId</label>
+                        <input type="number" class="form-control " name="storeId" formControlName="storeId"
                         placeholder="Enter Id with max 5 digits" >
                     </div>
-                    
-                 <div class="form-group">
-                        <label for="city"><i class="fas fa-eye"></i>City</label>
-                        <input type="text" class="form-control" id="city" formControlName=city
-                placeholder=" enter city" >
-                 </div>
-                
                     <div class="form-group">
-                        <label for="fromTime"><i class="fas fa-portrait"></i>FromTime</label>
-                        <input type="datetime-local" class="form-control " name="fromTime" formControlName="fromTime"
-                        placeholder="Enter  timings"> </div>
+                        <label for=" addressLine1">AddressLine1</label>
+                        <input type="text" class="form-control " name=" addressLine1" formControlName=" addressLine1"  placeholder="Enter your  address">
+                        </div>
                         <div class="form-group">
-                            <label for="toTime"><i class="fas fa-portrait"></i>ToTime</label>
-                            <input type="datetime-local" class="form-control " name="toTime" formControlName="toTime"
-                            placeholder="Enter  timings"> </div>
+                            <label for=" addressLine2">AddressLine2</label>
+                            <input type="text" class="form-control " name=" addressLine2" formControlName=" addressLine2"  placeholder="Enter your  address">
+                            </div>
+                           
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" class="form-control" id="city" formControlName="city" placeholder=" enter city" >
+                 </div>
+                 
                  <div class="form-group">
-                    <label for="phone"><i class="fas fa-portrait"></i>PhoneNumber</label>
-                    <input type="number" class="form-control " name="phone" formControlName="phone"
-                    placeholder="Enter your number">
-                   
-                </div>
-                <div class="form-group">
-                    <label for="holidaysPerMonth"><i class="fas fa-portrait"></i>Holidays</label>
-                    <input type="number" class="form-control " name="holidaysPerMonth" formControlName="holidaysPerMonth"
-                    placeholder="Enter leaves"> </div>
-               <div class="form-group">
-                    <button class="btn btn-success "  onsubmit="onSubmit()" [disabled]="!storeForm.valid" class="btn  btn-success px-5 mx-3">AddDetails</button> 
+                    <label for=" state">State</label>
+                    <select name="state" class="form-control "  formControlName=" state"  placeholder="Enter your state">
+                        <option >Andhrapradesh</option>
+                        <option>Telangana</option>
+                        <option >Maharashtra</option>
+                        <option>Tamil Nadu</option>
+                        <option >Kerala</option>
+                        <option>Others</option>
+                      </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for=" country">Country</label>
+                        <input type="text" class="form-control " name=" country" formControlName=" country"  placeholder="Enter your country">
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">PinCode</label>
+                            <input type="number" class="form-control " name="pincode" formControlName="pincode" placeholder="Enter your pincode">
+                           </div>
+                 <div class="form-group">
+                            <label for="holidayOn">HolidayOn</label>
+                            <input type="text" class="form-control " name="holidayOn" formControlName="holidayOn"  placeholder="Enter holiday date"> </div>
+                 <div class="form-group">
+                    <label for="openCloseTimings">OpenCloseTimings</label>
+                    <input type="text" class="form-control " name="openCloseTimings" formControlName="openCloseTimings" placeholder="Enter open close timings"> </div>
+                    <div class="form-group">
+                        <label for="contact">ContactNumber</label>
+                        <input type="number" class="form-control " name="contact" formControlName="contact" placeholder="Enter your number"> 
+                    </div>
+                    <div class="form-group">
+                        <a onclick="location.href='storelist'"> <button class="btn btn-success " onsubmit="onSubmit()"  (click)="addStore()" [disabled]="storeForm.valid" class="btn  btn-success px-5 mx-3">Submit</button> </a>
                              do u want to reset?
                              <button type="reset"  class="btn  btn-success px-5 mx-3">reset</button>       
+                      </div>
                     </div>
-                </div>
-                     </form>
-                    </div>
+                 </form>
+             </div>
         </div>
 
 </div>

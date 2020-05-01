@@ -7,25 +7,18 @@ import {STORES} from '../models/mock';
   providedIn: 'root'
 })
 export class StoreserviceService {
-  // naga=STORES;
-  // getAllStores(){
-  //   return this.naga;
-  //  }
-  //  constructor() { }
   httpUrl=" http://localhost:3000/stores";
    constructor(private httpClient:HttpClient) { }
    getAllStores():Observable<Store[]>{
     return this.httpClient.get<Store[]>(this.httpUrl);
   }
- 
-  saveStore(store:Store): Observable<Store>{
+ saveStore(store:Store): Observable<Store>{
     return this.httpClient.post<Store>(this.httpUrl,store);
   }
-  
-  storeUpdateInfo(store:Store):Observable<Store>{
+  updateStore(store:Store):Observable<Store>{
     return this.httpClient.put<Store>(this.httpUrl+store.storeId,store);
   }
-  geStoreByID(storeId:number):Observable<Store>{
+  getStoreByID(storeId:number):Observable<Store>{
     return this.httpClient.get<Store>(this.httpUrl+storeId);
   }
 }

@@ -18,19 +18,19 @@
                 <th>Actions</th>
               </thead>
               <tbody *ngFor="let store of stores">
-              <td>{{store.StoreId}}</td>
-              <td>{{store.StoreName}}</td>
-              <td>{{store.AddressLine1}}</td>
-              <td>{{store.AddresssLine2}}</td>
-              <td>{{store.City}}</td>
-              <td>{{store.State}}</td>
-              <td>{{store.Country}}</td>
-              <td>{{store.Pincode}}</td>
-              <td>{{store.HoliDayOn}}</td>
-              <td>{{store.OpenCloseTimings}}</td>
+              <td>{{store.storeId}}</td>
+              <td>{{store.storeName}}</td>
+              <td>{{store.addressLine1}}</td>
+              <td>{{store.addressLine2}}</td>
+              <td>{{store.city}}</td>
+              <td>{{store.state}}</td>
+              <td>{{store.country}}</td>
+              <td>{{store.pincode}}</td>
+              <td>{{store.holidayOn}}</td>
+              <td>{{store.openCloseTimings}}</td>
               <td>{{store.contact}}</td>
       <td>
-        <button class="btn btn-warning mx-auto m-2" (click)="updateStore(store)"><i class="fas fa-edit"></i>Update</button>
+        <button class="btn btn-warning mx-auto " (click)="updateStore(store)">Update</button>
         <!-- <button class="btn btn-danger mx-auto m-2" (click)="deleteIpo(ipo)"><i class="fas fa-trash"></i>Delete</button> -->
       </td>
       

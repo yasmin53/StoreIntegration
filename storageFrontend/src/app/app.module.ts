@@ -7,13 +7,15 @@ import{HttpClientModule, HTTP_INTERCEPTORS}from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { StoreformComponent } from './storeform/storeform.component';
 import { StorelistComponent } from './storelist/storelist.component';
+import { StoreupdateComponent } from './storeupdate/storeupdate.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     StoreformComponent,
-    StorelistComponent
+    StorelistComponent,
+    StoreupdateComponent
   ],
   imports: [
     BrowserModule,

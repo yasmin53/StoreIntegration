@@ -10,40 +10,32 @@ import { StoreserviceService } from '../services/storeservice.service';
   styleUrls: ['./storeform.component.css']
 })
 export class StoreformComponent implements OnInit {
-
-  storeForm:FormGroup;
+storeForm:FormGroup;
   stores:Store[]=[];
   nameTaken: boolean = false;
-  
-  
-    constructor(private formBuilder:FormBuilder,private storeservice:StoreserviceService,private router:Router) { }
-
-  ngOnInit() {
-  
-    this.storeForm = this.formBuilder.group({
+  constructor(private formBuilder:FormBuilder,private storeservice:StoreserviceService,private router:Router) { }
+ ngOnInit() {
+  this.storeForm = this.formBuilder.group({
+      storeId:[],
       storeName:['',Validators.required],
-      storeId: ['', Validators.required],
-      addressLine1: ['', Validators.required],
-      addressLine2: ['', Validators.required],
+       addressLine1:['', Validators.required],
+      addressLine2:['', Validators.required],
       city:['',Validators.required],
-      state: ['', Validators.required],
-      country: ['', Validators.required],
-      pinCode: ['', Validators.required],
+      state:['', Validators.required],
+      country:['', Validators.required],
+      pincode:['', Validators.required],
       holidayOn:['',Validators.required],
-      openCloseTimings: ['',Validators.required],
-      contact: ['',Validators.required]
-      
-    });
-    
-}
+      openCloseTimings:['',Validators.required],
+      contact:['',Validators.required]
+       });
+    }
 addStore(){
+  console.log(this.storeForm.value);
   this.storeservice.saveStore(this.storeForm.value).subscribe(data=>{
     alert("store added successfully");
     this.router.navigate(['storelist']);
   });
 }
-
-
 checkStorenameExistOrNot() {
   this.nameTaken = false;
   for (let store of this.stores) {
@@ -53,4 +45,7 @@ checkStorenameExistOrNot() {
       }
   }
 }
+// onSubmit(){
+//   console.log(this.storeForm.value);
+// }
 }

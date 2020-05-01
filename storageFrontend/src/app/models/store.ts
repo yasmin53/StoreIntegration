@@ -1,6 +1,6 @@
 export class Store{
-    storeName:String;
     storeId:number;
+    storeName:String;
     addressLine1:String;
     addressLine2:String;
     city:String;

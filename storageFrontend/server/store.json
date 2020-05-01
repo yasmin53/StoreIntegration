@@ -2,7 +2,7 @@
     "stores": [
       {
         "storeName": "LakshmiStores",
-        " storeId": 101,
+        "storeId":101,
         "addressLine1": "Nehrunagar",
         "addressLine2": "kottapet",
         "city": "karnool",
@@ -15,7 +15,7 @@
       },
       {
         "storeName": "RanjaniStores",
-        " storeId": 102,
+        "storeId":102,
         "addressLine1": "nagar",
         "addressLine2": "kottapet2222",
         "city": "Nellur",
@@ -28,7 +28,7 @@
       },
       {
         "storeName": "Sri",
-        " storeId": 103,
+        "storeId":103,
         "addressLine1": "Anandapet",
         "addressLine2": "kottapet",
         "city": "vijayawada",
@@ -41,7 +41,7 @@
       },
       {
         "storeName": "kiranmurthi",
-        " storeId": 104,
+        "storeId":104,
         "addressLine1": "Nehrunagar",
         "addressLine2": "kottapet",
         "city": "Guntur",

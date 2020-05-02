@@ -7,13 +7,13 @@ import {STORES} from '../models/mock';
   providedIn: 'root'
 })
 export class StoreserviceService {
-  httpUrl=" http://localhost:3000/stores";
+  httpUrl= `http://localhost:3000/stores`;
    constructor(private httpClient:HttpClient) { }
    getAllStores():Observable<Store[]>{
     return this.httpClient.get<Store[]>(this.httpUrl);
   }
- saveStore(store:Store): Observable<Store>{
-    return this.httpClient.post<Store>(this.httpUrl,store);
+ saveStore(store:Store):Observable<Store>{
+    return this.httpClient.post<Store>(`http://localhost:3000/stores`,store);
   }
   updateStore(store:Store):Observable<Store>{
     return this.httpClient.put<Store>(this.httpUrl+store.storeId,store);

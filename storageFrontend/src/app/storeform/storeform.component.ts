@@ -11,19 +11,19 @@ import { StoreserviceService } from '../services/storeservice.service';
 })
 export class StoreformComponent implements OnInit {
 storeForm:FormGroup;
-  stores:Store[]=[];
-  nameTaken: boolean = false;
+ // stores:Store[]=[];
+  nameTaken:boolean=false;
   constructor(private formBuilder:FormBuilder,private storeservice:StoreserviceService,private router:Router) { }
  ngOnInit() {
-  this.storeForm = this.formBuilder.group({
+  this.storeForm=this.formBuilder.group({
       storeId:[],
       storeName:['',Validators.required],
-       addressLine1:['', Validators.required],
-      addressLine2:['', Validators.required],
+       addressLine1:['',Validators.required],
+      addressLine2:['',Validators.required],
       city:['',Validators.required],
-      state:['', Validators.required],
-      country:['', Validators.required],
-      pincode:['', Validators.required],
+      state:['',Validators.required],
+      country:['',Validators.required],
+      pincode:['',Validators.required],
       holidayOn:['',Validators.required],
       openCloseTimings:['',Validators.required],
       contact:['',Validators.required]
@@ -36,16 +36,16 @@ addStore(){
     this.router.navigate(['storelist']);
   });
 }
-checkStorenameExistOrNot() {
-  this.nameTaken = false;
-  for (let store of this.stores) {
-      if (store.storeName == this.storeForm.get("storeName").value) {
-          this.nameTaken = true;
-          break;
-      }
-  }
+// checkStorenameExistOrNot() {
+//   this.nameTaken = false;
+//   for (let store of this.stores) {
+//       if (store.storeName == this.storeForm.get("storeName").value) {
+//           this.nameTaken = true;
+//           break;
+//       }
+//   }
 }
 // onSubmit(){
 //   console.log(this.storeForm.value);
 // }
-}
+

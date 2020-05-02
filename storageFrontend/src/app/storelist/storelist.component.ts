@@ -11,15 +11,15 @@ import { Router } from '@angular/router';
 export class StorelistComponent implements OnInit {
   
   stores:Store[];
-  constructor(private storeservice:StoreserviceService,private router: Router)  { }
+  constructor(private storeservice:StoreserviceService,private router:Router)  { }
  ngOnInit(){
     this.storeservice.getAllStores().subscribe(data=>{
       this.stores=data;
     })
   }
  updateStore(store:Store){
-    localStorage.removeItem('storeId1');
-    localStorage.setItem('storeId1',store.storeId.toString());
+    localStorage.removeItem('storeID');
+    localStorage.setItem('storeID',store.storeId.toString());
     this.router.navigate(['storeupdate']);
   
   }

@@ -1,3 +1,4 @@
+
 <div>
     <div class="row">
         <div class="col-lg-3 col-md-2 col-sm-1"></div>
@@ -10,7 +11,7 @@
                 
                 
                 <label for="storeName">StoreName</label>
-                        <input type="text" class="form-control" pattern='[A-Za-z\\s]*' pattern="[a-zA-Z]{2,64}"  name="storeName" formControlName="storeName"  placeholder="Enter your store name">
+                        <input type="text" class="form-control" pattern='[A-Za-z\\s]*'   name="storeName" formControlName="storeName"  placeholder="Enter your store name">
                         <span class="text-light" *ngIf="nameTaken"><small>This username is already exists.</small></span>
                     </div>
                     <div class="form-group">
@@ -29,12 +30,15 @@
                            
                     <div class="form-group">
                         <label for="city">City</label>
-                        <input type="text" class="form-control" id="city" formControlName="city" placeholder="enter city"required/>
+                        <input type="text" class="form-control" pattern='[A-Za-z\\s]*' id="city" formControlName="city" placeholder="Enter city"required/>
                  </div>
                  
                  <div class="form-group">
+                    <div class="row  mx-md-n5">
+                        <div class="col px-md-6">
                     <label for="state">State</label>
-                    <select name="state" class="form-control"  formControlName="state"  placeholder="Enter your state"required>
+                    <select name="state" class="form-control"style="height:35px;"   formControlName="state"  placeholder="Select"required>
+                        <option >Select:</option>
                         <option >Andhrapradesh</option>
                         <option>Telangana</option>
                         <option >Maharashtra</option>
@@ -44,29 +48,49 @@
                       </select>
                     </div>
                     
-                    <div class="form-group">
+                    <div class="col px-md-6">
                         <label for="country">Country</label>
-                        <input type="text" class="form-control"name="country"formControlName="country"  placeholder="Enter your country">
-                        </div>
-                        <div class="form-group">
-                            <label for="pincode">PinCode</label>
-                            <input type="number"class="form-control" name="pincode"pattern="[0-9]*" minlength="6" maxlength="6" formControlName="pincode" placeholder="Enter your pincode"required/>
-                           </div>
-                 <div class="form-group">
-                            <label for="holidayOn">HolidayOn</label>
-                            <input type="text" class="form-control" name="holidayOn" formControlName="holidayOn"  placeholder="Enter holiday date"> </div>
-                 <div class="form-group">
-                    <label for="openCloseTimings">OpenCloseTimings</label>
-                    <input type="text" class="form-control " name="openCloseTimings" formControlName="openCloseTimings" placeholder="Enter open close timings"> </div>
-                    <div class="form-group">
-                        <label for="contact">ContactNumber</label>
-                        <input type="number" class="form-control " name="contact" formControlName="contact" placeholder="Enter your number"required/> 
+                    <select  class="form-control" style="height:35px;"name="country"formControlName="country"  placeholder="Enter your country">
+                        <option >Select:</option>
+                        <option >India</option>
+                        <option>Uk</option>
+                        <option >US</option>
+                        <option>OTHERS</option>
+                    </select>
                     </div>
+                 </div> 
+                </div>
+                 <div class="form-group">
+                     <div class="row  mx-md-n5">
+                        <div class="col px-md-6">
+                            <label for="holidayOn">HolidayOn</label>
+                           
+                 <input type="text" class="form-control" name="holidayOn" formControlName="holidayOn"  placeholder="Enter holiday"> 
+                 
+                 </div>
+                 
+                    <div class="col px-md-6">
+                    <label for="openCloseTimings">OpenCloseTimings</label>
+                    <input type="text" class="form-control  " name="openCloseTimings" formControlName="openCloseTimings" placeholder="Enter open close timings"> </div>
+                
+                </div></div>
+                <div class="form-group">
+                    <div class="row  mx-md-n5">
+                        <div class="col px-md-6">
+                    <label for="pincode">PinCode</label>
+                    <input type="number"class="form-control " name="pincode"pattern="[0-9]*" minlength="6" maxlength="6" formControlName="pincode" placeholder="Enter your pincode"required/>
+                   </div>
+                   <div class="col px-md-6">
+                        <label for="contact">ContactNumber</label>
+                        <input type="number" class="form-control " name="contact" pattern="[0-9]*"  maxlength="10"  formControlName="contact" placeholder="Enter your number"required/> 
+                    </div>
+                    </div>
+                </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-success"(click)="addStore()"[disabled]="storeForm.valid" class="btn  btn-success px-5 mx-3">Submit</button> 
+                        <button type="submit" class="btn btn-success"(click)="addStore()"[disabled]="!storeForm.valid" class="btn  btn-success px-5 mx-3">Submit</button> 
                              do u want to reset?
-                             <button type="reset"  class="btn  btn-success px-5 mx-3">reset</button>   
-                             <a onclick="location.href='storelist'"> <button type="sumit"  class="btn  btn-success px-5 mx-3">ViewList</button>  </a>    
+                             <button type="reset"class="btn  btn-success px-5 mx-3">reset</button>   
+                             <a onclick="location.href='storelist'"> <button type="submit"  class="btn  btn-success px-5 mx-3">ViewList</button>  </a>    
                       </div>
                     </div>
                  </form>

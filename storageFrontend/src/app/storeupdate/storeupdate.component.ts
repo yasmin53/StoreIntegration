@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class StoreupdateComponent implements OnInit {
   storeUpdate:FormGroup;
   constructor(private formBuilder:FormBuilder,private storeservice:StoreserviceService,private router:Router) { }
-ngOnInit() {
+ngOnInit(){
    this.storeUpdate=this.formBuilder.group({
       storeName:['',Validators.required],
       storeId:[],
@@ -23,11 +23,11 @@ ngOnInit() {
       country:['', Validators.required],
       pincode:['', Validators.required],
       holidayOn:['',Validators.required],
-      openCloseTimings: ['',Validators.required],
+      openCloseTimings:['',Validators.required],
       contact:['',Validators.required]
       
     });
-    const id=localStorage.getItem('storeId1') ;
+    const id=localStorage.getItem('storeID') ;
    if(+id>0){
 this.storeservice.getStoreByID(+id).subscribe(store=>{
 this.storeUpdate.patchValue(store);

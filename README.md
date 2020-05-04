@@ -83,7 +83,39 @@ Date:28-04-2020
 
 Date:29-04-2020
 
-1.
+Backend : [Store-service]
+
+Performed CRUD Operations like add,get,get all .
+
+FrontEnd:
+
+Created Two Forms:1.StoreList
+                  2.StoreForm
+  
+Date:30-04-2020
+
+We are engaged with meeting conducted by Shilpa ,that we have schdule for three days 1-05-2020,2-05-2020,3-05-2020 to finish the hacker ranker challanges.Monday we have assessment.We prepared for assessment.Evening  schedule cancelled.
+
+Date:1-05-2020
+
+FrontEnd:
+
+UI part changes done in form names and after submiting form data will be displayed on logs
+
+Backend :
+
+For all services we renamed,application.properties file is renamed as application.yml .Add operation is done
+
+Date:2-05-2020
+
+FrontEnd:
+Form validations are done for 2 forms
+
+Backend:
+
+Modifications in store-service,like operations 
+
+
 
 
 

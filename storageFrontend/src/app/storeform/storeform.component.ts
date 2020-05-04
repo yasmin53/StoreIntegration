@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '../models/store';
+import { StoreserviceService } from '../services/storeservice.service';
 
 @Component({
   selector: 'app-storeform',
@@ -8,24 +10,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./storeform.component.css']
 })
 export class StoreformComponent implements OnInit {
-
-  storeForm:FormGroup;
-  
-  
-    constructor(private formBuilder:FormBuilder,private router:Router) { }
-
-  ngOnInit() {
-  
-    this.storeForm = this.formBuilder.group({
-      storeManagerName:['',Validators.required],
-      id: ['', Validators.required],
+storeForm:FormGroup;
+ // stores:Store[]=[];
+  nameTaken:boolean=false;
+  constructor(private formBuilder:FormBuilder,private storeservice:StoreserviceService,private router:Router) { }
+ ngOnInit() {
+  this.storeForm=this.formBuilder.group({
+      storeId:[],
+      storeName:['',Validators.required],
+       addressLine1:['',Validators.required],
+      addressLine2:['',Validators.required],
       city:['',Validators.required],
-      fromTime: ['', Validators.required],
-      toTime:['',Validators.required],
-      phone:['',Validators.required],
-      holidaysPerMonth: ['',Validators.required]
-      
-    });
+      state:['',Validators.required],
+      country:['',Validators.required],
+      pincode:['',Validators.required],
+      holidayOn:['',Validators.required],
+      openCloseTimings:['',Validators.required],
+      contact:['',Validators.required]
+       });
+    }
+addStore(){
+  console.log(this.storeForm.value);
+  this.storeservice.saveStore(this.storeForm.value).subscribe(data=>{
+    alert("store added successfully");
+    this.router.navigate(['storelist']);
+  });
+}
+// checkStorenameExistOrNot() {
+//   this.nameTaken = false;
+//   for (let store of this.stores) {
+//       if (store.storeName == this.storeForm.get("storeName").value) {
+//           this.nameTaken = true;
+//           break;
+//       }
+//   }
+}
+// onSubmit(){
+//   console.log(this.storeForm.value);
+// }
 
-}
-}

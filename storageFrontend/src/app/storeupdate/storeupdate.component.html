@@ -1,0 +1,99 @@
+<div>
+    <div class="row">
+        <div class="col-lg-3 col-md-2 col-sm-1"></div>
+        <div class="col-lg-6 col-md-8 col-sm-10">
+            <p class="h2 text-light text-uppercase text-center mb-2 ">UPDATESTORE </p>  
+            <form class="form-group border p-3 p-lg-5 border-curved mt-5  " [formGroup]="storeUpdate" style="background-color: rgba(150, 168, 151, 0.897);" >
+                <div class="jumbotron p-2 p-lg-3"style="background-color: rgb(124, 130, 139);">
+                    <div class="form-group">
+               
+                
+                
+                        <label for="storeName">StoreName</label>
+                                <input type="text" class="form-control" pattern='[A-Za-z\\s]*'   name="storeName" formControlName="storeName"  placeholder="Enter your store name">
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="storeId">StoreId</label>
+                                <input type="number" class="form-control " name="storeId" formControlName="storeId"
+                                placeholder="Enter Id with max 5 digits"required />
+                            </div>
+                            <div class="form-group">
+                                <label for="addressLine1">AddressLine1</label>
+                                <input type="text" class="form-control" name="addressLine1" formControlName="addressLine1"  placeholder="Enter your  address"required/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="addressLine2">AddressLine2</label>
+                                    <input type="text" class="form-control" name=" addressLine2" formControlName="addressLine2"  placeholder="Enter your  address"required/>
+                                    </div>
+                                   
+                            <div class="form-group">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" pattern='[A-Za-z\\s]*' id="city" formControlName="city" placeholder="Enter city"required/>
+                         </div>
+                         
+                         <div class="form-group">
+                            <div class="row  mx-md-n5">
+                                <div class="col px-md-6">
+                            <label for="state">State</label>
+                            <select name="state" class="form-control"style="height:35px;"   formControlName="state"  placeholder="Select"required>
+                                <option >Select:</option>
+                                <option >Andhrapradesh</option>
+                                <option>Telangana</option>
+                                <option >Maharashtra</option>
+                                <option>Tamil Nadu</option>
+                                <option >Kerala</option>
+                                <option>Others</option>
+                              </select>
+                            </div>
+                            
+                            <div class="col px-md-6">
+                                <label for="country">Country</label>
+                            <select  class="form-control " style="height:35px;"name="country"formControlName="country"  placeholder="Enter your country">
+                                <option >Select:</option>
+                                <option >India</option>
+                                <option>Uk</option>
+                                <option >US</option>
+                                <option>OTHERS</option>
+                            </select>
+                            </div>
+                         </div> 
+                        </div>
+                         <div class="form-group">
+                             <div class="row  mx-md-n5">
+                                <div class="col px-md-6">
+                                    <label for="holidayOn">HolidayOn</label>
+                                   
+                         <input type="text" class="form-control" name="holidayOn" formControlName="holidayOn"  placeholder="Enter holiday"> 
+                         
+                         </div>
+                         
+                            <div class="col px-md-6">
+                            <label for="openCloseTimings">OpenCloseTimings</label>
+                            <input type="text" class="form-control  " name="openCloseTimings" formControlName="openCloseTimings" placeholder="Enter open close timings"> </div>
+                        
+                        </div></div>
+                        <div class="form-group">
+                            <div class="row  mx-md-n5">
+                                <div class="col px-md-6">
+                            <label for="pincode">PinCode</label>
+                            <input type="number"class="form-control " name="pincode"pattern="[0-9]*" minlength="6" maxlength="6" formControlName="pincode" placeholder="Enter your pincode"required/>
+                           </div>
+                           <div class="col px-md-6">
+                                <label for="contact">ContactNumber</label>
+                                <input type="number" class="form-control " name="contact" pattern="[0-9]*"  maxlength="10"  formControlName="contact" placeholder="Enter your number"required/> 
+                            </div>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <button class="btn btn-success  px-5 mx-3" click="updateThisStore()">update</button> 
+                            
+                            
+                             <a onclick="location.href='storelist'"> <button type="sumit"  class="btn  btn-success px-5 mx-3">ViewList</button>  </a>    
+                      </div>
+                    </div>
+                 </form>
+             </div>
+        </div>
+
+</div>

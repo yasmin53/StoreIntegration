@@ -1,18 +1,12 @@
-package com.usecase.storeservice.model;
+package com.usecase.storeservice.entity;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-@Entity
-@Table(name="store_on_premisis")
-public class StoreModel {
-	
-	@Id
+
+public class StoreEntity {
+
+
+
 	private int id;
 	private int storeId;
 	private String name;
@@ -25,18 +19,18 @@ public class StoreModel {
 	private long contact;
 	private String holidayOn;
 	private String openCloseTimings;
-	private LocalDateTime createdOn;
+	private Date createdOn;
 	private String createdBy;
-	private LocalDateTime updateOn;
+	private Date updateOn;
 	private String updatedBy;
-	private boolean isActive = false;
-	public StoreModel() {
+	private boolean isActive;
+	public StoreEntity() {
 		
 	}
 	
-	public StoreModel(int id, int storeId, String name, String addressline1, String addressline2, String city,
+	public StoreEntity(int id, int storeId, String name, String addressline1, String addressline2, String city,
 			String state, String country, int pincode, long contact, String holidayOn, String openCloseTimings,
-			LocalDateTime createdOn, String createdBy, LocalDateTime updateOn, String updatedBy, boolean isActive) {
+			Date createdOn, String createdBy, Date updateOn, String updatedBy, boolean isActive) {
 		super();
 		this.id = id;
 		this.storeId = storeId;
@@ -135,30 +129,24 @@ public class StoreModel {
 	public void setOpenCloseTimings(String openCloseTimings) {
 		this.openCloseTimings = openCloseTimings;
 	}
-	
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
 	public String getCreatedBy() {
 		return createdBy;
 	}
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	
-	public LocalDateTime getCreatedOn() {
-		return createdOn;
-	}
-
-	public void setCreatedOn(LocalDateTime createdOn) {
-		this.createdOn = createdOn;
-	}
-
-	public LocalDateTime getUpdateOn() {
+	public Date getUpdateOn() {
 		return updateOn;
 	}
-
-	public void setUpdateOn(LocalDateTime updateOn) {
+	public void setUpdateOn(Date updateOn) {
 		this.updateOn = updateOn;
 	}
-
 	public String getUpdatedBy() {
 		return updatedBy;
 	}

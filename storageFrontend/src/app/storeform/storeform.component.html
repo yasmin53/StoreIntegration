@@ -8,10 +8,14 @@
                 <div class="jumbotron p-2 p-lg-3"style="background-color: rgb(124, 130, 139);">
                <div class="form-group">
                
-                
+                <!-- <mat-form-field appearance="" class="w-100 col">
+                    <mat-label>Name <span class="text-danger">*</span></mat-label>
+                    <input matInput placeholder="please fill out name" pattern="[A-Za-z]+" formControlName="storeName">
+                    <mat-error>Name must conatin only alphabets</mat-error>
+                </mat-form-field> -->
                 
                 <label for="storeName">StoreName</label>
-                        <input type="text" class="form-control" pattern='[A-Za-z\\s]*'   name="storeName" formControlName="storeName"  placeholder="Enter your store name">
+                        <input type="text" class="form-control"    name="storeName" formControlName="storeName" pattern="[a-zA-Z]" oninvalid="setCustomValidity('Please enter on alphabets only. ')" placeholder="Enter your store name">
                         <span class="text-light" *ngIf="nameTaken"><small>This username is already exists.</small></span>
                     </div>
                     <div class="form-group">

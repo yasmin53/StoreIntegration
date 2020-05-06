@@ -115,6 +115,24 @@ Backend:
 
 Modifications in store-service,like operations 
 
+Date:5-05-2020
+
+FrontEnd:
+
+Working on html patterns.
+
+Backend:working on the postman to getall the details by required operation
+
+
+Date:06-05-2020
+
+FrontEnd:
+
+Integrating frontend and backend.
+
+Backend:Added a new dependency called swagger .Working on it.
+
+
 
 
 

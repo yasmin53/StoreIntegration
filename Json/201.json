@@ -1,0 +1,18 @@
+{
+    "storeId": 201,
+    "name": "Sairam",
+    "addressline1": "HousingBoard",
+    "addressline2": "Gutur",
+    "city": "Guntur",
+    "state": "Andhrapradsh",
+    "country": "India",
+    "pincode": 522005,
+    "contact": 2000000,
+    "holidayOn": "Monday",
+    "openCloseTimings": "09-06",
+    "createdOn": 1588835201173,
+    "createdBy": "Sairam",
+    "updateOn": 1588835201173,
+    "updatedBy": "Sairam",
+    "active": true
+}

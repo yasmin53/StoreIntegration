@@ -24,6 +24,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @RequestMapping(value = "store-process")
 public class StoreProcessController {
+	
+	@Autowired
+	StoreServiceProxy storeServiceProxy;
+	
 	@Autowired
 	StoreProcessService storeProcessService;
 
@@ -42,6 +46,22 @@ public class StoreProcessController {
 		return stores;
 
 	}
+	
+	@GetMapping(value="/feign")
+	public ResponseEntity<?> getAllStores(){
+		
+		ResponseEntity<?> stores = storeServiceProxy.getAllCustomers();
+		return stores;
+		
+	}
+	
+	@GetMapping("/ribbon")
+	public String testRibbon() {
+		
+		String str = storeServiceProxy.testRibbon();
+		return str;
+	}
+	
 
 	/*
 	 * @GetMapping(value = "/getAllStores") public ResponseEntity<?> findAll() {

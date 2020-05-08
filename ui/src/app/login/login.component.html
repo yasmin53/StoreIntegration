@@ -1,0 +1,25 @@
+<div>
+  <div class="row">
+      
+      <div class="col-lg-3 col-md-2 col-sm-10 "></div>
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        
+      <form [formGroup]="loginForm" class="form-group  form-center border p-3 p-lg-5 border-curved mt-3 mb-3" style="background-color: rgba(150, 168, 151, 0.897);">
+        <div class="jumbotron p-2 p-lg-3 " style="background-color: rgb(124, 130, 139);">
+        <p class="h2 text-light text-uppercase text-center mb-3 "><b>Login</b></p>       
+        
+        <label for="storeId" ><i class="fas fa-user"></i>StoreId:</label>
+        <input type="number" formControlName="storeId" class="form-control " placeholder="Your id">
+
+        <!-- <label for="password" ><i class="fas fa-key"></i>Password:</label>
+        <input type="password" formControlName="password" class="form-control" placeholder="Your Password"> -->
+
+        <!-- <p class="text-center text-light my-2 w-100"><a routerLink="/reset"><b class="text-dark">Forget Password? Click Here to Reset.</b></a></p> -->
+       
+        <a onclick="location.href='storelist'"><button class="btn btn-outline-info text-dark text-center form-control" >Login</button></a>
+      </div>
+      </form>
+    
+    </div>
+</div>
+</div>

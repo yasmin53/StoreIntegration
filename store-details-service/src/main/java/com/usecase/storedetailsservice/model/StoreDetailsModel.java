@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="store-details")
+@Table(name="store_cloud")
 public class StoreDetailsModel {
 	@Id
 	private int id;

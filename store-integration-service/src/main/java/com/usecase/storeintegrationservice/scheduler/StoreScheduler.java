@@ -18,6 +18,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.usecase.storeintegrationservice.entity.StoreIntegrationServiceEntity;
 import com.usecase.storeintegrationservice.model.StoreIntegrationServiceModel;
 import com.usecase.storeintegrationservice.service.StoreIntegrationService;
 
@@ -29,24 +30,26 @@ public class StoreScheduler {
 	@Autowired
 	StoreIntegrationService storeIntegrationService;
 
-	@Scheduled(fixedRate = 10)
+	@Scheduled(fixedRate = 200000)
 	public void stroingStoreDetails() {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			mapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
 			File inputfile = new File("C:\\Users\\jagad\\\\OneDrive\\Desktop\\MiniProject\\Json");
 			File[] jsonfiles = inputfile.listFiles();
-			if (jsonfiles.length > 1) {
-				for (File file : jsonfiles) {
-					InputStream inputStream = new FileInputStream(file);
-					TypeReference<StoreIntegrationServiceModel> typeReference = new TypeReference<StoreIntegrationServiceModel>() {
+			if (jsonfiles.length > 0) {
+				for(File jsonfile:jsonfiles) {
+					InputStream inputStream = new FileInputStream(jsonfile);
+					TypeReference<List<StoreIntegrationServiceEntity>> typeReference = new TypeReference<List<StoreIntegrationServiceEntity>>() {
 					};
-					StoreIntegrationServiceModel stores = mapper.readValue(inputStream, typeReference);
-					storeIntegrationService.save(stores);
+					List<StoreIntegrationServiceEntity> stores = mapper.readValue(inputStream, typeReference);
+					storeIntegrationService.saveAll(stores);
 					log.info("Storing the store detains in database..... !!!");
+					jsonfile.delete();
+					
 				}
 			} else {
-				log.info("Files Not Found....");
+				log.info("Files are Stored....");
 			}
 		} catch (JsonParseException e) {
 			log.info("Getting an exception");

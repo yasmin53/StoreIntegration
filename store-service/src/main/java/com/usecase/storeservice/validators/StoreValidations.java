@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Controller;
 
+import com.usecase.storeservice.entity.StoreEntity;
 import com.usecase.storeservice.model.StoreModel;
 
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class StoreValidations {
 
-	public boolean validate(StoreModel store) {
+	public boolean validate(StoreEntity store) {
 		if (isValidateName(store.getName()) == false || store.getName() == null) {
 			log.info("Reenter StoreName");
 			return false;

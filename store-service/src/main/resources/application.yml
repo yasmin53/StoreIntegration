@@ -7,15 +7,24 @@ spring:
     
     username: root
     
-    password: admin
+    password: root
     
   jpa:
     show-sql: true
     
     hibernate:
-      ddl-auto: update
+      ddl-auto: update  cloud:    config:      server:        git:          uri: ${HOME}/UseCaseGit/SoreIntegration      uri:      - http://localhost:8001
+        
 server:
   port: 8001
   
-management:  endpoints:    web:      exposure:        include: "*"       
-   
+my:
+  path: C:\Users\jagad\OneDrive\Desktop\MiniProject\Json
+  
+
+  
+#  pont.email.template.location=classpath:templates/mailTemplate.html
+  
+
+#management:#  endpoints:#    web:#      exposure:#        include: "*"       
+#   

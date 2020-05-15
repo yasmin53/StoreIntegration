@@ -1,18 +1,24 @@
 package com.usecase.storeservice;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
+
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-@EnableDiscoveryClient
+import com.usecase.storeservice.typesafe.StoreServiceConfigurationPropertoes;
+
+
 @SpringBootApplication
 @EnableCircuitBreaker
+@EnableDiscoveryClient
+@EnableConfigServer
+@EnableConfigurationProperties(StoreServiceConfigurationPropertoes.class)
+//@EnableWebSecurity
 public class StoreServiceApplication {
 
 	public static void main(String[] args) {

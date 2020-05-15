@@ -1,12 +1,20 @@
 package com.usecase.storeservice.entity;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
 
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="store_on_premisis")
 public class StoreEntity {
-
-
-
+	
+	@Id
+	@GeneratedValue
 	private int id;
 	private int storeId;
 	private String name;
@@ -23,7 +31,7 @@ public class StoreEntity {
 	private String createdBy;
 	private Date updateOn;
 	private String updatedBy;
-	private boolean isActive;
+	private boolean isActive = false;
 	public StoreEntity() {
 		
 	}
@@ -129,24 +137,30 @@ public class StoreEntity {
 	public void setOpenCloseTimings(String openCloseTimings) {
 		this.openCloseTimings = openCloseTimings;
 	}
-	public Date getCreatedOn() {
-		return createdOn;
-	}
-	public void setCreatedOn(Date createdOn) {
-		this.createdOn = createdOn;
-	}
+	
 	public String getCreatedBy() {
 		return createdBy;
 	}
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+	
+	public Date getCreatedOn() {
+		return createdOn;
+	}
+
+	public void setCreatedOn(Date createdOn) {
+		this.createdOn = createdOn;
+	}
+
 	public Date getUpdateOn() {
 		return updateOn;
 	}
+
 	public void setUpdateOn(Date updateOn) {
 		this.updateOn = updateOn;
 	}
+
 	public String getUpdatedBy() {
 		return updatedBy;
 	}

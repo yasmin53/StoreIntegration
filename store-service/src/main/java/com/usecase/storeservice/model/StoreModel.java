@@ -8,11 +8,10 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-@Entity
-@Table(name="store_on_premisis")
+
 public class StoreModel {
 	
-	@Id
+	
 	private int id;
 	private int storeId;
 	private String name;
@@ -25,9 +24,9 @@ public class StoreModel {
 	private long contact;
 	private String holidayOn;
 	private String openCloseTimings;
-	private LocalDateTime createdOn;
+	private Date createdOn;
 	private String createdBy;
-	private LocalDateTime updateOn;
+	private Date updateOn;
 	private String updatedBy;
 	private boolean isActive = false;
 	public StoreModel() {
@@ -36,7 +35,7 @@ public class StoreModel {
 	
 	public StoreModel(int id, int storeId, String name, String addressline1, String addressline2, String city,
 			String state, String country, int pincode, long contact, String holidayOn, String openCloseTimings,
-			LocalDateTime createdOn, String createdBy, LocalDateTime updateOn, String updatedBy, boolean isActive) {
+			Date createdOn, String createdBy, Date updateOn, String updatedBy, boolean isActive) {
 		super();
 		this.id = id;
 		this.storeId = storeId;
@@ -143,19 +142,19 @@ public class StoreModel {
 		this.createdBy = createdBy;
 	}
 	
-	public LocalDateTime getCreatedOn() {
+	public Date getCreatedOn() {
 		return createdOn;
 	}
 
-	public void setCreatedOn(LocalDateTime createdOn) {
+	public void setCreatedOn(Date createdOn) {
 		this.createdOn = createdOn;
 	}
 
-	public LocalDateTime getUpdateOn() {
+	public Date getUpdateOn() {
 		return updateOn;
 	}
 
-	public void setUpdateOn(LocalDateTime updateOn) {
+	public void setUpdateOn(Date updateOn) {
 		this.updateOn = updateOn;
 	}
 

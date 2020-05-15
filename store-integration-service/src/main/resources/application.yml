@@ -7,7 +7,7 @@ spring:
     
     username: root
     
-    password: admin
+    password: root
     
   jpa:
     show-sql: true
@@ -15,6 +15,6 @@ spring:
     hibernate:
       ddl-auto: update
 server:
-  port: 8003 
+  port: 8004 
        
    

@@ -1,6 +1,7 @@
 package com.usecase.storeintegrationservice.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,38 +15,25 @@ public class StoreIntegrationService {
 
 	@Autowired
 	StoreIntegrationRepository storeIntegrationRepository;
-	public StoreIntegrationServiceEntity save(StoreIntegrationServiceModel store) {
-		StoreIntegrationServiceEntity storeIntegrationEntity= new StoreIntegrationServiceEntity();
-//		storeIntegrationEntity.setId(store.getId());
-		storeIntegrationEntity.setStoreId(store.getStoreId());
-		storeIntegrationEntity.setName(store.getName());
-		storeIntegrationEntity.setAddressline1(store.getAddressline1());
-		storeIntegrationEntity.setAddressline2(store.getAddressline2());
-		storeIntegrationEntity.setCity(store.getCity());
-		storeIntegrationEntity.setState(store.getState());
-		storeIntegrationEntity.setCountry(store.getCountry());
-		storeIntegrationEntity.setPincode(store.getPincode());
-		storeIntegrationEntity.setContact(store.getContact());
-		storeIntegrationEntity.setHolidayOn(store.getHolidayOn());
-		storeIntegrationEntity.setOpenCloseTimings(store.getOpenCloseTimings());
-		storeIntegrationEntity.setCreatedOn(store.getCreatedOn());
-		storeIntegrationEntity.setCreatedBy(store.getCreatedBy());
-		storeIntegrationEntity.setUpdateOn(store.getUpdateOn());
-		storeIntegrationEntity.setUpdatedBy(store.getUpdatedBy());
-		storeIntegrationEntity.setActive(store.isActive());
+	public StoreIntegrationServiceEntity save(StoreIntegrationServiceEntity  store) {
+
 		
-		return  storeIntegrationRepository.save(storeIntegrationEntity);
+		return  storeIntegrationRepository.save(store);
 	}
 	
-//	public Iterable<StoreIntegrationServiceModel> saveAll(List<StoreIntegrationServiceModel> storeJsonList){
-//	
-//		StoreIntegrationEntity store= new StoreIntegrationEntity();
-//		
-//		return storeIntegrationRepository.saveAll(storeJsonList);
-//	}
-//	
-	public Iterable<StoreIntegrationServiceEntity> getAllStore(){
+	public Iterable<StoreIntegrationServiceEntity> saveAll(List<StoreIntegrationServiceEntity> storeJsonList){
+	
+		StoreIntegrationServiceEntity store= new StoreIntegrationServiceEntity();
+		
+		return storeIntegrationRepository.saveAll(storeJsonList);
+	}
+	
+	public List<StoreIntegrationServiceEntity> getAllStore(){
 		
 		return storeIntegrationRepository.findAll();
+	}
+	public StoreIntegrationServiceEntity getStoreById(int storeId) {
+		StoreIntegrationServiceEntity store=storeIntegrationRepository.findByStoreId(storeId);
+		return store;
 	}
 }

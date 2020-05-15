@@ -7,7 +7,7 @@ spring:
     
     username: root
     
-    password: admin
+    password: root
     
   jpa:
     show-sql: true
@@ -15,6 +15,14 @@ spring:
     hibernate:
       ddl-auto: update
 server:
-  port: 8067
-       
+  port: 8003
+   
+store-integration-service:
+  ribbon:
+    listOfServers: http://localhost:8004,http://localhost:8005
+    
+    
+    
+    
+     
    

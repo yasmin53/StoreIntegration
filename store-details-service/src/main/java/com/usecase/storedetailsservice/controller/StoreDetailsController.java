@@ -3,39 +3,37 @@ package com.usecase.storedetailsservice.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.usecase.storedetailsservice.model.StoreDetailsModel;
-import com.usecase.storedetailsservice.service.StoreDetailsService;
+import com.usecase.storedetailsservice.integrationentity.StoreIntegrationEntity;
+import com.usecase.storedetailsservice.integrationproxy.StoreIntegrationProxy;
 
 @RestController
+@RequestMapping(value="store-details")
 public class StoreDetailsController {
 
 	@Autowired
-	Environment environment;
+	StoreIntegrationProxy integrationProxy;
 	
-	@Autowired
-	StoreDetailsService storeDetailsService ;
-	
-	@GetMapping(value = "/customer", produces = {MediaType.APPLICATION_JSON_VALUE})
-	public ResponseEntity<?>getAllCustomers(){
-		List<StoreDetailsModel> customersList= storeDetailsService.getAllCustomers();
-		if(customersList.size()>0) {
-			return new ResponseEntity<List>(customersList,HttpStatus.OK);
-		}
-		else {
-			return new ResponseEntity<String>("No data",HttpStatus.NOT_FOUND);
-		}	
+	@GetMapping(value = "/getAllStores")
+	public List<StoreIntegrationEntity> getAllStores() {
+		List<StoreIntegrationEntity> storelist = integrationProxy.getAllStores();
+		return storelist;
 	}
+	@GetMapping(value = "/getStoreById/{storeId}")
+	public ResponseEntity<?> getStoreById(@PathVariable("storeId") int id) {
+		ResponseEntity<?> store= integrationProxy.getStoreById(id);
+		return store;
+	}
+	
 	
 	@GetMapping("/ribbon")
 	public String testRibbon() {
-		return environment.getProperty("local.server.port");
+		String test = integrationProxy.testRibbon();
+		return test;
 	}
-	
 }
